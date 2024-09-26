@@ -22,7 +22,15 @@ export const { handle } = SvelteKitAuth({
             },
 
         },
-        token: "https://api.login.yahoo.com/oauth2/get_token",
+        token: {
+            url: "https://api.login.yahoo.com/oauth2/get_token",
+            params: {
+                client_id: CLIENT_ID,
+                client_secret: CLIENT_SECRET,
+                redirect_uri: `https://${VERCEL_URL}/auth/callback/yahoo`,
+                grant_type: "authorization",
+            },
+        },
         wellKnown: "https://api.login.yahoo.com/.well-known/openid-configuration",
         userinfo: 'https://api.login.yahoo.com/openid/v1/userinfo',
         client: {
