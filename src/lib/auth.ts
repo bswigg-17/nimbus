@@ -16,7 +16,7 @@ export const { handle } = SvelteKitAuth({
             url: "https://api.login.yahoo.com/oauth2/request_auth",
             params: {
                 client_id: CLIENT_ID,
-                redirect_uri: "https://localhost:5174/auth/callback/yahoo",
+                redirect_uri: "https://nimbus-opal.vercel.app/auth/callback/yahoo",
                 response_type: "code",
             },
 
