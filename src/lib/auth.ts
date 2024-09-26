@@ -1,16 +1,20 @@
 import { SvelteKitAuth } from "@auth/sveltekit"
+import {
+    CLIENT_ID,
+    CLIENT_SECRET,
+} from "$env/static/private"
 
 export const { handle } = SvelteKitAuth({
     providers: [{
         id: 'yahoo',
         name: 'Yahoo',
         type: 'oauth',
-        clientId: "dj0yJmk9R2wya0d2cHlheE1qJmQ9WVdrOWJURkZabU5CYVVrbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PWNh",
-        clientSecret: "8fd36fe6dba43b04fdee1ec075be6f160aaf45b6",
+        clientId: CLIENT_ID,
+        clientSecret: CLIENT_SECRET,
         authorization: {
             url: "https://api.login.yahoo.com/oauth2/request_auth",
             params: {
-                client_id: "dj0yJmk9R2wya0d2cHlheE1qJmQ9WVdrOWJURkZabU5CYVVrbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PWNh",
+                client_id: CLIENT_ID,
                 redirect_uri: "https://localhost:5174/auth/callback/yahoo",
                 response_type: "code",
             },
