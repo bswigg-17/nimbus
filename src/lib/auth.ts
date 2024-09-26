@@ -2,6 +2,7 @@ import { SvelteKitAuth } from "@auth/sveltekit"
 import {
     CLIENT_ID,
     CLIENT_SECRET,
+    VERCEL_URL
 } from "$env/static/private"
 
 export const { handle } = SvelteKitAuth({
@@ -16,7 +17,7 @@ export const { handle } = SvelteKitAuth({
             url: "https://api.login.yahoo.com/oauth2/request_auth",
             params: {
                 client_id: CLIENT_ID,
-                redirect_uri: "https://nimbus-opal.vercel.app/auth/callback/yahoo",
+                redirect_uri: `https://${VERCEL_URL}/auth/callback/yahoo`,
                 response_type: "code",
             },
 
