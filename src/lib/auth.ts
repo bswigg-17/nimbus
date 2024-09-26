@@ -5,6 +5,7 @@ import {
 } from "$env/static/private"
 
 export const { handle } = SvelteKitAuth({
+    trustHost: true,
     providers: [{
         id: 'yahoo',
         name: 'Yahoo',
