@@ -16,9 +16,9 @@ export const { handle } = SvelteKitAuth({
         authorization: {
             url: "https://api.login.yahoo.com/oauth2/request_auth",
             params: {
-                client_id: CLIENT_ID,
                 redirect_uri: `https://${VERCEL_PROJECT_PRODUCTION_URL}/auth/callback/yahoo`,
                 response_type: "code",
+                scope: "email profile"
             },
         },
         token: 'https://api.login.yahoo.com/oauth2/get_token',
